@@ -150,12 +150,14 @@ delete_timeout = "3m"
 
 update_timeout = "3m"
 
-webTargetGroupName = "ppr_frontend"
+webTargetGroupName = "pprFrontend"
 
 # Launch Config
-launchConfig_ami = "ami-14c5486b"
+launchConfig_ami = "ami-079efc78"
 
-launch_config_instance_type = "m4.large"
+#launch_config_instance_type = "m4.large"
+# temporary setting to t2.micro
+launch_config_instance_type = "t2.micro"
 
 autoscaler_name = "ppr_auto_scaler"
 

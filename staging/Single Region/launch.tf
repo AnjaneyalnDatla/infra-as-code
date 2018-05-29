@@ -294,12 +294,12 @@ module "application_load_balancer" {
   source                     = "../../modules/application_load_balancer"
   load_balancer_name         = "${var.lb_name}"
   load_balancer_is_internal  = false
-  security_groups            = "${module.public_dmz.sgid}"
+  security_groups            = ["${module.public_dmz.sgid}"]
   subnets                    = ["${module.public_subnet_1.subnet_id}", "${module.public_subnet_2.subnet_id}", "${module.public_subnet_3.subnet_id}"]
   idle_timeout               = "${var.lb_timeout}"
-  enable_deletion_protection = true
+  enable_deletion_protection = false
   enable_http2               = true
-  ip_address_type            = "IPV4"
+  ip_address_type            = "ipv4"
 
   load_balancer_create_timeout = "${var.create_timeout}"
   load_balancer_delete_timeout = "${var.delete_timeout}"
@@ -308,7 +308,7 @@ module "application_load_balancer" {
   target_group_name       = "${var.webTargetGroupName}"
   vpc_id                  = "${module.vpc.vpc_id}"
   backend_port            = 80
-  backend_protocol        = "tcp"
+  backend_protocol        = "HTTP"
   target_type             = "instance"
   target_id               = "${module.autoscaler.autoscalingGroup_id}"
   http_tcp_listeners_port = 80

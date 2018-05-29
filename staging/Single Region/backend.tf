@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "mapfre-terraform-dev"
-    key    = "ppr/terraform"
+    bucket = "musa-terraform"
+    key    = "ppr"
     region = "us-east-1"
   }
 }

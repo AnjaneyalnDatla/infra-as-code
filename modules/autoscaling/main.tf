@@ -19,7 +19,7 @@ resource "aws_launch_configuration" "launch_Config" {
 ## Creating AutoScaling Group
 resource "aws_autoscaling_group" "autoscalingGroup" {
   launch_configuration = "${aws_launch_configuration.launch_Config.id}"
-  availability_zones   = ["${var.auto_scale_availability_zones}"]
+  vpc_zone_identifier   = ["${var.auto_scale_availability_zones}"]
   min_size             = 2
   max_size             = 3
 

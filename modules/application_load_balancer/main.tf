@@ -36,14 +36,14 @@ resource "aws_lb_target_group" "main" {
   }
 }
 
-resource "aws_lb_target_group_attachment" "lb" {
-  target_group_arn = "${aws_lb_target_group.main.arn}"
+#resource "aws_lb_target_group_attachment" "lb" {
+#  target_group_arn = "${aws_lb_target_group.main.arn}"
 
-  target_id = "${var.target_id}"
+  #target_id = "${var.target_id}"
 
-  #target_id = "${aws_lb_target_group.main.target_id}"
-  port = 80
-}
+#  target_id = "${aws_lb_target_group.main.target_id}"
+#  port = 80
+#}
 
 ###########
 
